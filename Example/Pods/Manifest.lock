@@ -1,0 +1,16 @@
+PODS:
+  - ZXTools (0.1.0)
+
+DEPENDENCIES:
+  - ZXTools (from `../`)
+
+EXTERNAL SOURCES:
+  ZXTools:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ZXTools: 4b70e242fa37054583f682fb1e35b479f26171af
+
+PODFILE CHECKSUM: 561adcb6160f1a4821049a0ab4af9e8f8634ca5b
+
+COCOAPODS: 1.9.3

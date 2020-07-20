@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'ZXTools_Example' do
+  pod 'ZXTools', :path => '../ZXTools'
+
+  target 'ZXTools_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
