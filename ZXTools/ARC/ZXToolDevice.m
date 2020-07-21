@@ -11,6 +11,7 @@
 #import <Security/Security.h>
 #import <sys/utsname.h>
 #import "ZXToolUUID.h"
+#import <StoreKit/StoreKit.h>
 @implementation ZXToolDevice
 /*获取当前设备的IMSI值*/
 + (NSString *)getDeviceIMSIValue
@@ -207,4 +208,45 @@
         return NO;
     }
 }
+
++ (BOOL)goAppStoreDownload:(NSString *)appId {
+    NSString *urlPath = [appId containsString:@"http"] ? appId : [NSString stringWithFormat:@"http://itunes.apple.com/us/app/id%@", appId];
+    NSURL *url = [NSURL URLWithString:urlPath];
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        if (@available(iOS 10.0, *)) {
+            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+        } else {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
++ (void)goAppModeDownload:(NSString *)appId viewController:(UIViewController *)viewController{
+    NSDictionary *appParameters = [NSDictionary dictionaryWithObject:appId forKey:SKStoreProductParameterITunesItemIdentifier];
+
+    SKStoreProductViewController *productViewController = [[SKStoreProductViewController alloc] init];
+    [productViewController setDelegate:viewController];
+    [productViewController loadProductWithParameters:appParameters completionBlock:^(BOOL result, NSError *error) { }];
+    [viewController presentViewController:productViewController animated:YES completion:^{ }];
+}
+
++ (BOOL)goAppStoreComment:(NSString *)appId {
+    
+    NSString *urlPath = [appId containsString:@"http"] ? appId : [NSString stringWithFormat:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@",appId];
+    NSURL *url = [NSURL URLWithString:urlPath];
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        if (@available(iOS 10.0, *)) {
+            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+        } else {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 @end

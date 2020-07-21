@@ -82,9 +82,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSString *)getBundleID;
 
-
+/// 跳转至系统设置
 + (BOOL)goApplicationOpenSettings;
 
+/// 跳转至App Store下载页
++ (BOOL)goAppStoreDownload:(NSString *)appId;
+/// 模态至APP内部下载页
++ (void)goAppModeDownload:(NSString *)appId viewController:(UIViewController *)viewController;
+
+/// 跳转至App Store评价页
++ (BOOL)goAppStoreComment:(NSString *)appId;
 @end
 
 NS_ASSUME_NONNULL_END
