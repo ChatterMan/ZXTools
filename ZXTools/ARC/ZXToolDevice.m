@@ -167,14 +167,14 @@
 /*获取当前设备的唯一编号*/
 + (NSString *)getDeviceUUID
 {
-    NSString *uuid = [UUID readUUIDFromKeyChain];
+    NSString *uuid = [ZXToolUUID readUUIDFromKeyChain];
     
     if (!uuid) {
-        [UUID saveUUIDToKeyChain];
+        [ZXToolUUID saveUUIDToKeyChain];
     } else {
         return uuid;
     }
-    return [UUID readUUIDFromKeyChain];
+    return [ZXToolUUID readUUIDFromKeyChain];
 }
 
 /**
@@ -193,4 +193,18 @@
     return bundleID;
 }
 
+
++ (BOOL)goApplicationOpenSettings {
+    NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        if (@available(iOS 10.0, *)) {
+            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+        } else {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+        return YES;
+    } else {
+        return NO;
+    }
+}
 @end

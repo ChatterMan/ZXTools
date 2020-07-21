@@ -82,6 +82,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSString *)getBundleID;
 
+
++ (BOOL)goApplicationOpenSettings;
+
 @end
 
 NS_ASSUME_NONNULL_END

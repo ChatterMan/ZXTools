@@ -2,24 +2,20 @@
 //  ZXToolTransitions.m
 //  ZXTools
 //
-//  Created by Max on 2020/7/20.
+//  Created by Max on 2020/7/21.
 //
 
 #import "ZXToolTransitions.h"
 
-@implementation ZXToolTransitions
-
-//! The corner radius applied to the view containing the presented view
-//! controller.
 #define CORNER_RADIUS   16.f
 
-@interface ZXUICustomPresentationController () <UIViewControllerAnimatedTransitioning>
+@interface ZXToolTransitions () <UIViewControllerAnimatedTransitioning>
 @property (nonatomic, strong) UIView *dimmingView;
 @property (nonatomic, strong) UIView *presentationWrappingView;
 @end
 
 
-@implementation ZXUICustomPresentationController
+@implementation ZXToolTransitions
 
 //| ----------------------------------------------------------------------------
 - (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController presentingViewController:(UIViewController *)presentingViewController
@@ -395,4 +391,6 @@
 {
     return self;
 }
+
 @end
+

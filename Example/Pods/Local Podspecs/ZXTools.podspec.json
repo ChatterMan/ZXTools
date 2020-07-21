@@ -1,22 +1,25 @@
 {
   "name": "ZXTools",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "summary": "A short description of ZXTools.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/352353818@qq.com/ZXTools",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/ChatterMan/ZXTools",
   "authors": {
-    "352353818@qq.com": "zx@qnvip.com"
+    "Max Zhou": "352353818@qq.com"
   },
   "source": {
-    "git": "https://github.com/352353818@qq.com/ZXTools.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/ChatterMan/ZXTools.git",
+    "tag": "0.0.1"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
-  "source_files": "ZXTools/Classes/**/*"
+  "source_files": "ZXTools/**/*",
+  "requires_arc": [
+    "ZXTools/ARC/*.m"
+  ]
 }

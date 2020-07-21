@@ -19,12 +19,13 @@
     #import <ZXTools/ZXToolFileManger.h>
     #import <ZXTools/ZXToolDevice.h>
     #import <ZXTools/ZXToolUUID.h>
-
+    #import <ZXTools/ZXToolTransitions.h>
 #else
 
     #import "ZXToolFileManger.h"
     #import "ZXToolDevice.h"
     #import "ZXToolUUID.h"
+    #import "ZXToolTransitions.h"
 
 #endif /* __has_include */
 

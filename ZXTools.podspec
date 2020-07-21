@@ -31,7 +31,8 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'ZXTools/**/*'
-  
+  s.requires_arc = false
+  s.requires_arc = ['ZXTools/ARC/*.m']
   # s.resource_bundles = {
   #   'ZXTools' => ['ZXTools/Assets/*.png']
   # }

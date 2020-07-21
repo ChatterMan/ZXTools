@@ -10,6 +10,11 @@
 #endif
 #endif
 
+#import "ZXToolDevice.h"
+#import "ZXToolFileManger.h"
+#import "ZXTools.h"
+#import "ZXToolUUID.h"
+#import "ZXToolProxyStatus.h"
 
 FOUNDATION_EXPORT double ZXToolsVersionNumber;
 FOUNDATION_EXPORT const unsigned char ZXToolsVersionString[];
